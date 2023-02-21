@@ -17,25 +17,13 @@ const services = document.querySelector('.cards-services')
 
 document.addEventListener('DOMContentLoaded', () => {
     const mediaFiles = hero.querySelectorAll('img, video')
-    let files = 0
-    mediaFiles.forEach((file, index) => {
-        file.onload = () => {
-            files++
-            if (files === mediaFiles.length) {
-                document.querySelector('.preloader').classList.add('preloader--hide')
-                document.body.style.overflow = 'visible'
-                window.addEventListener('scroll', () => {
+    document.querySelector('.preloader').classList.add('preloader--hide')
+    document.body.style.overflow = 'visible'
 
-                })
-                invisibleElements.forEach((elem, index) => {
-                    elem.style.transitionDelay = (1 + index/2)+'s'
-                    elem.classList.remove('_invisible')
-                    elem.classList.add('_visible')
-                })
-            }
-
-
-        }
+    invisibleElements.forEach((elem, index) => {
+        elem.style.transitionDelay = (1 + index/2)+'s'
+        elem.classList.remove('_invisible')
+        elem.classList.add('_visible')
     })
 })
 
